@@ -1128,8 +1128,15 @@ html.dark {
   --top-act-group-shadown: #00000033;
   --top-act-group-separate: #EDEDF6;
   --dropdown-bg-color: #2f3441;
-  --dropdown-shadown-color: rgba(23, 28, 40, 0.40);
+  --dropdown-shadown-color: rgba(23, 28, 40, 0.4);
   --dropdown-arrow-color: brightness(0) saturate(100%) invert(18%) sepia(40%) saturate(281%) hue-rotate(184deg) brightness(94%) contrast(92%);
+  --top-menu-border-color: #171C28;
+  --menu-column-icon-color: brightness(0) saturate(100%) invert(90%) sepia(5%) saturate(4590%) hue-rotate(190deg) brightness(118%) contrast(97%);
+}
+@media screen and (max-width: 991.98px) {
+  html.dark {
+    --header-shadown-color: rgba(0, 0, 0, 0.2);
+  }
 }
 
 html {
@@ -1142,10 +1149,12 @@ html {
   --top-act-group-separate: rgba(237, 237, 246, 1);
   --dropdown-bg-color: #fff;
   --dropdown-shadown-color: rgba(200, 200, 200, 0.40);
+  --top-menu-border-color: #D2D1D6;
 }
 @media screen and (max-width: 991.98px) {
   html {
     --header-bg-color: #fff;
+    --header-shadown-color: rgba(237, 237, 246, 0.20);
   }
 }
 
@@ -1157,12 +1166,17 @@ html {
 .header {
   background-color: var(--header-bg-color);
 }
+@media screen and (max-width: 991.98px) {
+  .header {
+    box-shadow: 0px 20px 60px 10px var(--header-shadown-color);
+  }
+}
 
 .top-bar {
   position: relative;
   padding: 30px 0;
 }
-@media screen and (max-width: 575.98px) {
+@media screen and (max-width: 767.98px) {
   .top-bar {
     justify-content: space-between;
     padding: 16px 0;
@@ -1183,23 +1197,17 @@ html {
 }
 
 .navbar {
-  margin-left: 144px;
+  margin-left: 139px;
 }
 @media screen and (max-width: 1199.98px) {
   .navbar {
-    margin-left: 50px;
+    margin-left: 28px;
   }
 }
 @media screen and (max-width: 991.98px) {
   .navbar {
     display: none;
   }
-}
-.navbar__item:first-child a {
-  padding-left: 0;
-}
-.navbar__item:last-child a {
-  padding-right: 0;
 }
 .navbar__item:hover .dropdown {
   visibility: visible;
@@ -1222,7 +1230,7 @@ html {
   column-gap: 20px;
   margin-left: auto;
 }
-@media screen and (max-width: 575.98px) {
+@media screen and (max-width: 767.98px) {
   .top-act {
     margin-left: 0;
   }
@@ -1281,7 +1289,7 @@ html {
     margin-left: 39px;
   }
 }
-@media screen and (max-width: 575.98px) {
+@media screen and (max-width: 767.98px) {
   .logo {
     margin-left: 0;
   }
@@ -1307,13 +1315,17 @@ html {
   position: absolute;
   left: 0;
   padding-top: 54px;
+  width: min(1240px, 100%);
   visibility: hidden;
   opacity: 0;
   transition: visibility 0s, opacity 1s ease-in-out;
 }
 .dropdown__inner {
+  --inner-max-height: min(582px, 100vh - 158px);
+  --inner-padding: 30px;
   position: relative;
-  padding: 30px;
+  max-height: var(--inner-max-height);
+  padding: var(--inner-padding);
   border-radius: 20px;
   background: var(--dropdown-bg-color);
   box-shadow: 0px 40px 90px 20px var(--dropdown-shadown-color);
@@ -1325,6 +1337,65 @@ html {
   content: url("../icon/dropdown-arrow.svg");
   translate: -50%;
   filter: var(--dropdown-arrow-color);
+}
+
+.top-menu {
+  max-height: calc(var(--inner-max-height) - var(--inner-padding) * 2);
+}
+.top-menu__main {
+  max-height: inherit;
+  width: 292px;
+  border-right: 1px solid var(--top-menu-border-color);
+  overflow-y: auto;
+}
+
+.menu-column {
+  display: flex;
+  column-gap: 14px;
+}
+.menu-column__icon {
+  position: relative;
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+}
+.menu-column__content {
+  flex: 1;
+}
+.menu-column__icon-1 {
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+}
+.menu-column__icon-2 {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 24px;
+  height: 24px;
+  object-fit: cover;
+  filter: var(--menu-column-icon-color);
+}
+.menu-column__heading {
+  margin-top: 6px;
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 150%;
+}
+.menu-column__list {
+  margin-top: 19px;
+}
+.menu-column__link {
+  display: block;
+  padding: 7px 0;
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 142.857%;
+  transition: color 0.3s ease;
+}
+.menu-column__link:hover {
+  color: #0071DC;
+  font-weight: 500;
 }
 
 /*# sourceMappingURL=main.css.map */
