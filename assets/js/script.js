@@ -158,7 +158,10 @@ function initJsToggle() {
                 return (document.body.innerText = `Không tìm thấy phần tử "${target}"`);
             }
             const isHidden = $(target).classList.contains("hide");
-
+            // Xóa class navbar__item--active khi toggle (Reset)
+            $$(".navbar__item--active").forEach((item) => {
+                item.classList.remove("navbar__item--active");
+            });
             requestAnimationFrame(() => {
                 $(target).classList.toggle("hide", !isHidden);
                 $(target).classList.toggle("show", isHidden);
@@ -166,3 +169,15 @@ function initJsToggle() {
         };
     });
 }
+
+window.addEventListener("template-loaded", () => {
+    const links = $$(".js-dropdown-list > li > a");
+
+    links.forEach((link) => {
+        link.onclick = () => {
+            if (window.innerWidth > 991) return;
+            const item = link.closest("li");
+            item.classList.toggle("navbar__item--active");
+        };
+    });
+});
