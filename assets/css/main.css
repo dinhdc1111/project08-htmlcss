@@ -1332,17 +1332,18 @@ html {
   position: absolute;
   top: -13px;
   left: var(--arrow-left-pos);
-  content: url("../icon/dropdown-arrow.svg");
+  content: url("../icons/dropdown-arrow.svg");
   translate: -50%;
   filter: var(--dropdown-arrow-color);
 }
 
 .top-menu {
   --main-column-width: 292px;
+  --max-inner-height: calc(min(582px, 100vh - 158px) - (var(--inner-padding) * 2));
   position: relative;
 }
 .top-menu__main {
-  height: calc(min(582px, 100vh - 158px) - var(--inner-padding) * 2);
+  height: var(--max-inner-height);
   width: var(--main-column-width);
   border-right: 1px solid var(--top-menu-border-color);
   overflow-y: auto;
@@ -1416,6 +1417,14 @@ html {
   inset: 0 0 0 var(--main-column-width);
   padding-left: var(--inner-padding);
   overflow-y: auto;
+}
+.sub-menu--not-main {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  position: initial;
+  inset: initial;
+  height: var(--max-inner-height);
+  padding-left: 0;
 }
 
 /*# sourceMappingURL=main.css.map */
