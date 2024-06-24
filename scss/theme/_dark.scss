@@ -20,4 +20,8 @@ html.dark {
     --dropdown-arrow-color: brightness(0) saturate(100%) invert(18%) sepia(40%) saturate(281%) hue-rotate(184deg) brightness(94%) contrast(92%);
     --top-menu-border-color: #171C28;
     --menu-column-icon-color: brightness(0) saturate(100%) invert(90%) sepia(5%) saturate(4590%) hue-rotate(190deg) brightness(118%) contrast(97%);
+
+    // Sidebar
+    --sidebar-bg: #292e39;
+    --sidebar-shadown: rgba(23, 28, 40, 0.40);
 }
