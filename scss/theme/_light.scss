@@ -10,7 +10,7 @@ html {
     --top-act-group-shadown: rgba(237, 237, 246, 0.20);
     --top-act-group-separate: rgba(237, 237, 246, 1);
 
-    @include abstracts.breakpoint(lg) {
+    @include abstracts.screen(lg) {
         --header-bg-color: #fff;
         --header-shadown-color: rgba(237, 237, 246, 0.20);
     }

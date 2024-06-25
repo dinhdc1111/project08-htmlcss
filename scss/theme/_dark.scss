@@ -10,7 +10,7 @@ html.dark {
     --top-act-group-shadown: #00000033;
     --top-act-group-separate: #EDEDF6;
 
-    @include abstracts.breakpoint(lg) {
+    @include abstracts.screen(lg) {
         --header-shadown-color: rgba(0, 0, 0, 0.2);
     }
 
