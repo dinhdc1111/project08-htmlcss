@@ -1372,6 +1372,8 @@ html {
   }
   .navbar__item--active .dropdown {
     display: block !important;
+    visibility: visible;
+    opacity: 1;
   }
 }
 .navbar__link {

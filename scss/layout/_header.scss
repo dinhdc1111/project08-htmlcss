@@ -121,6 +121,8 @@
 
             &--active .dropdown {
                 display: block !important;
+                visibility: visible;
+                opacity: 1;
             }
         }
     }
