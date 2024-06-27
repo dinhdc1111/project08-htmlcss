@@ -1919,6 +1919,7 @@ html {
 }
 
 .product-card {
+  height: 100%;
   padding: 16px;
   border-radius: 20px;
   background-color: var(--product-card-bg);
