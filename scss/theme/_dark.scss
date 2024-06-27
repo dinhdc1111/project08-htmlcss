@@ -40,4 +40,10 @@ html.dark {
     --product-card-bg: #171C28;
     --product-card-shadown: rgba(0, 0, 0, 0.20);
     --filter-form-tag-bg: #171C28;
+
+    // Filter form
+    --filter-form-bg: var(--dropdown-bg-color);
+    --filter-form-shadow: (0, 0, 0, 0.40);
+    --filter-form-tag-bg: #171C28;
+    --filter-form-arrow: var(--dropdown-arrow-color);
 }
